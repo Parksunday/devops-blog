@@ -2,7 +2,7 @@ language: go
 go:
   - master
 install:
-  - go get github.com/gohugoio/hugo 
+  - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.59.1/hugo_extended_0.59.1_Linux-64bit.deb
 script:
   - mkdir -p themes/beautifulhugo && git clone https://gitHub.com/halogenica/beautifulhugo.git themes/beautifulhugo
   - hugo --theme beautifulhugo
