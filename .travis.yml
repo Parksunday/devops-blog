@@ -2,9 +2,7 @@ language: go
 go:
   - 1.12.x
 install:
-  - go get -u -v github.com/kardianos/govendor
-  - go get -u -v github.com/gohugoio/hugo
-  - (cd $GOPATH/src/github.com/gohugoio/hugo && govendor sync && go install)
+  - go get github.com/gohugoio/hugo
 deploy:
   provider: pages
   skip_cleanup: true
