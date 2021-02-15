@@ -1,8 +1,8 @@
 language: go
 go:
-  - 1.11.x
-  install:
-    - go get gitHub.com/gohugoio/hugo
+  - 1.12.x
+install:
+  - go get -u -v github.com/gohugoio/hugo
 deploy:
   provider: pages
   skip_cleanup: true
