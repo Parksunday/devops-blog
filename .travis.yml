@@ -2,7 +2,7 @@ language: go
 go:
   - 1.12.x
 install:
-  - wget https://github.com/gohugoio/hugo/releases/download/v0.53/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+  - wget https://github.com/gohugoio/hugo/releases/download/v0.53/hugo_v0.5_Linux-64bit.tar.gz
 script:
   - mkdir -p themes/beautifulhugo && git clone https://gitHub.com/halogenica/beautifulhugo.git themes/beautifulhugo
   - hugo --theme beautifulhugo
