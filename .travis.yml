@@ -2,16 +2,9 @@ language: go
 go:
   - 1.11.x
 install:
-  - cd $HOME
-  - rm -rf $TRAVIS_REPO_SLUG
-  - git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
-  - cd $TRAVIS_REPO_SLUG
-  - git checkout -qf $TRAVIS_COMMIT
-# Workaround used to make sure hugo install won't fail
-# https://discourse.gohugo.io/t/govendor-fails-during-build-from-source/8084
-  - go get -u -v github.com/kardianos/govendor
-  - go get -u -v github.com/gohugoio/hugo
-  - (cd $GOPATH/src/github.com/gohugoio/hugo && govendor sync && go install)script:
+  - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.59.1/hugo_extended_0.59.1_Linux-64bit.deb
+  - sudo dpkg -i hugo*.deb
+script:
   - mkdir -p themes/beautifulhugo && git clone https://gitHub.com/halogenica/beautifulhugo.git themes/beautifulhugo
   - hugo --theme beautifulhugo
 deploy:
