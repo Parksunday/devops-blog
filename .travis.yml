@@ -1,8 +1,11 @@
+env:
+  - HUGO_VERSION="0.50"
+  - HUGO_VERSION="0.74.3"
 language: go
 go:
   - 1.12.x
 install:
-  - go get -t -v github.com/gohugoio/hugo
+  - wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
 script:
   - mkdir -p themes/beautifulhugo && git clone https://GitHub.com/halogenica/beautifulhugo.git themes/beautifulhugo
   - hugo --theme beautifulhugo
